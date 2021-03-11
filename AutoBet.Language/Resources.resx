@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>User authenticated successfully.</value>
+  </data>
+  <data name="INVALID_USERNAME_OR_PASSWORD" xml:space="preserve">
+    <value>The username or password are invalid</value>
+  </data>
+  <data name="ACCOUNT_NOW_LOCKED" xml:space="preserve">
+    <value>The account was just locked.</value>
+  </data>
+  <data name="ACCOUNT_ALREADY_LOCKED" xml:space="preserve">
+    <value>The account is already locked</value>
+  </data>
+  <data name="PENDING_AUTH" xml:space="preserve">
+    <value>Pending authentication</value>
+  </data>
+  <data name="TELBET_TERMS_CONDITIONS_NA" xml:space="preserve">
+    <value>Telbet terms and conditions rejected</value>
+  </data>
+  <data name="DUPLICATE_CARDS" xml:space="preserve">
+    <value>Duplicate cards</value>
+  </data>
+  <data name="SECURITY_QUESTION_WRONG_3X" xml:space="preserve">
+    <value>The user has entered wrong the security answer 3 times</value>
+  </data>
+  <data name="KYC_SUSPEND" xml:space="preserve">
+    <value>KYC suspended</value>
+  </data>
+  <data name="SUSPENDED" xml:space="preserve">
+    <value>The account is suspended</value>
+  </data>
+  <data name="CLOSED" xml:space="preserve">
+    <value>The account is closed</value>
+  </data>
+  <data name="SELF_EXCLUDED" xml:space="preserve">
+    <value>The account has been self-excluded</value>
+  </data>
+  <data name="INVALID_CONNECTIVITY_TO_REGULATOR_DK" xml:space="preserve">
+    <value>The DK regulator cannot be accessed due to some internal problems in the system behind or in at regulator; timeout cases included.</value>
+  </data>
+  <data name="NOT_AUTHORIZED_BY_REGULATOR_DK" xml:space="preserve">
+    <value>The user identified by the given credentials is not authorized in the DK's jurisdictions due to the regulators' policies.Ex: the user for which this session should be created is not allowed to act(play, bet) in the DK's jurisdiction.</value>
+  </data>
+  <data name="INVALID_CONNECTIVITY_TO_REGULATOR_IT" xml:space="preserve">
+    <value>The IT regulator cannot be accessed due to some internal problems in the system behind or in at regulator; timeout cases included.</value>
+  </data>
+  <data name="NOT_AUTHORIZED_BY_REGULATOR_IT" xml:space="preserve">
+    <value>The user identified by the given credentials is not authorized in the IT's jurisdictions due to the regulators' policies.Ex: the user for which this session should be created is not allowed to act(play, bet) in the IT's jurisdiction.</value>
+  </data>
+  <data name="SECURITY_RESTRICTED_LOCATION" xml:space="preserve">
+    <value>The account is restricted due to security concerns</value>
+  </data>
+  <data name="BETTING_RESTRICTED_LOCATION" xml:space="preserve">
+    <value>The account is accessed from a location where betting is restricted</value>
+  </data>
+  <data name="TRADING_MASTER" xml:space="preserve">
+    <value>Trading Master Account</value>
+  </data>
+  <data name="TRADING_MASTER_SUSPENDED" xml:space="preserve">
+    <value>Suspended Trading Master Account</value>
+  </data>
+  <data name="AGENT_CLIENT_MASTER" xml:space="preserve">
+    <value>Agent Client Master</value>
+  </data>
+  <data name="AGENT_CLIENT_MASTER_SUSPENDED" xml:space="preserve">
+    <value>Suspended Agent Client Master</value>
+  </data>
+  <data name="DANISH_AUTHORIZATION_REQUIRED" xml:space="preserve">
+    <value>Danish authorization required</value>
+  </data>
+  <data name="SPAIN_MIGRATION_REQUIRED" xml:space="preserve">
+    <value>Spain migration required</value>
+  </data>
+  <data name="DENMARK_MIGRATION_REQUIRED" xml:space="preserve">
+    <value>Denmark migration required</value>
+  </data>
+  <data name="SPANISH_TERMS_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>The latest Spanish terms and conditions version must be accepted. You must login to the website to accept the new conditions.</value>
+  </data>
+  <data name="ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>The latest Italian contract version must be accepted.You must login to the website to accept the new conditions.</value>
+  </data>
+  <data name="CERT_AUTH_REQUIRED" xml:space="preserve">
+    <value>Certificate required or certificate present but could not authenticate with it</value>
+  </data>
+  <data name="CHANGE_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Change password required</value>
+  </data>
+  <data name="PERSONAL_MESSAGE_REQUIRED" xml:space="preserve">
+    <value>Personal message required for the user</value>
+  </data>
+  <data name="INTERNATIONAL_TERMS_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>The latest international terms and conditions must be accepted prior to logging in.</value>
+  </data>
+  <data name="EMAIL_LOGIN_NOT_ALLOWED" xml:space="preserve">
+    <value>This account has not opted in to log in with the email</value>
+  </data>
+  <data name="MULTIPLE_USERS_WITH_SAME_CREDENTIAL" xml:space="preserve">
+    <value>There is more than one account with the same credential</value>
+  </data>
+  <data name="ACCOUNT_PENDING_PASSWORD_CHANGE" xml:space="preserve">
+    <value>The account must undergo password recovery to reactivate via https://identitysso.betfair.com/view/recoverpassword</value>
+  </data>
+  <data name="TEMPORARY_BAN_TOO_MANY_REQUESTS" xml:space="preserve">
+    <value>The limit for successful login requests per minute has been exceeded.New login attempts will be banned for 20 minutes</value>
+  </data>
+  <data name="ITALIAN_PROFILING_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>You must login to the website to accept the new conditions</value>
+  </data>
+  <data name="AUTHORIZED_ONLY_FOR_DOMAIN_RO" xml:space="preserve">
+    <value>You are attempting to login to the Betfair Romania domain with a non.ro account</value>
+  </data>
+  <data name="AUTHORIZED_ONLY_FOR_DOMAIN_SE" xml:space="preserve">
+    <value>You are attempting to login to the Betfair Swedish domain with a non.se account.</value>
+  </data>
+  <data name="SWEDEN_NATIONAL_IDENTIFIER_REQUIRED" xml:space="preserve">
+    <value>You must provided your Swedish National identifier via Betfair.se before proceeding.</value>
+  </data>
+  <data name="SWEDEN_BANK_ID_VERIFICATION_REQUIRED" xml:space="preserve">
+    <value>You must provided your Swedish bank id via Betfair.se before proceeding.</value>
+  </data>
+  <data name="ACTIONS_REQUIRED" xml:space="preserve">
+    <value>You must login to https://www.betfair.com to provide missing information.</value>
+  </data>
+  <data name="NAME_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>The name field must not contain any special character.</value>
+  </data>
+  <data name="EMAIL_MUST_BE_VALID" xml:space="preserve">
+    <value>The email must be valid.</value>
+  </data>
+  <data name="COUNTRY_CODE_CHAR_LENGTH" xml:space="preserve">
+    <value>The country code must have 2 characters.</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>The password must be provided.</value>
+  </data>
+  <data name="USERNAME_EMPTY" xml:space="preserve">
+    <value>The username must be provided.</value>
+  </data>
+  <data name="NAME_FIELD_EMPTY" xml:space="preserve">
+    <value>The name field must not be empty.</value>
+  </data>
+  <data name="ORGANIZATION_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>The organization name field must not contain any special characters.</value>
+  </data>
+  <data name="LOCALITY_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>The organization locality/city field must not contain any special characters.</value>
+  </data>
+  <data name="STATE_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>The state/province field must not contain any special characters.</value>
+  </data>
+  <data name="ORGANIZATION_UNIT_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>The organizational unit name field must not contain any special characters.</value>
+  </data>
+</root>
