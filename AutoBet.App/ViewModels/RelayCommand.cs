@@ -7,25 +7,7 @@ namespace AutoBet.App.ViewModels
     {
         private Action<object> execute;
         private Predicate<object> canExecute;
-        public RelayCommand(Action<object> execute)
-            : this(execute, DefaultCanExecute)
-        {
-        }
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-        {
-            if (execute == null)
-            {
-                throw new ArgumentNullException("execute");
-            }
 
-            this.execute = execute;
-
-            if (canExecute == null)
-            {
-                throw new ArgumentNullException("canExecute");
-            }
-            this.canExecute = canExecute;
-        }
         public event EventHandler CanExecuteChanged
         {
             add
@@ -41,6 +23,24 @@ namespace AutoBet.App.ViewModels
             }
         }
         private event EventHandler CanExecuteChangedInternal;
+
+        public RelayCommand(Action<object> execute) : this(execute, DefaultCanExecute) { }
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+        {
+            if (execute == null)
+            {
+                throw new ArgumentNullException("execute");
+            }
+
+            this.execute = execute;
+
+            if (canExecute == null)
+            {
+                throw new ArgumentNullException("canExecute");
+            }
+            this.canExecute = canExecute;
+        }
+       
         public bool CanExecute(object parameter)
         {
             return this.canExecute != null && this.canExecute(parameter);

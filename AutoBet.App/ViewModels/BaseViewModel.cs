@@ -1,7 +1,9 @@
-﻿using System;
+﻿using AutoBet.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -12,8 +14,10 @@ using System.Windows.Threading;
 
 namespace AutoBet.App.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : IPageViewModel
     {
+        public string PageTitle { get; set; }
+
         internal static Timer SetInterval(Action Act, int Interval)
         {
             Timer tmr = new Timer();
@@ -24,13 +28,12 @@ namespace AutoBet.App.ViewModels
 
             return tmr;
         }
-        internal static NavigationService Navigation;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        internal void RaisePropertyChanged(object property)
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            string prop = property.GetType().Name;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

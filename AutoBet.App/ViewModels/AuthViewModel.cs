@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoBet.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,10 @@ using System.Windows.Navigation;
 
 namespace AutoBet.App.ViewModels
 {
-    public class AuthViewModel  :  BaseViewModel
+    public class AuthViewModel : BaseViewModel
     {
-        public AuthViewModel(NavigationService navigation)
+        public AuthViewModel()
         {
-            Navigation = navigation;
         }
     }
 }

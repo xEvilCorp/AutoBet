@@ -4,9 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoBet.App"
+        xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
+        xmlns:views="clr-namespace:AutoBet.App.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Frame x:Name="coolFrame"/>
-    </Grid>
+    <Window.Resources>
+    <DataTemplate DataType="{x:Type vm:AuthViewModel}">
+        <Border Background="Coral">
+            <views:AuthView />
+        </Border>
+    </DataTemplate>
+
+        <!--<DataTemplate DataType="{x:Type PageTwoViewModel}">
+            <Border Background="DeepSkyBlue">
+                <TextBox Text="{Binding PageTitle}" />
+            </Border>
+        </DataTemplate>-->
+    </Window.Resources>
+
+
+    <StackPanel>
+        <Button Content="Load Login Page"
+            Command="{Binding SelectPageFromIndexCommand}"
+            CommandParameter="0" />
+        <Button Content="Load Page One"
+            Command="{Binding SelectPageFromIndexCommand}"
+            CommandParameter="1" />
+        <Button Content="Load Next Page"
+            Command="{Binding SelectNextPageCommand}" />
+
+        <!-- The actual page control -->
+        <ContentControl x:Name="MainNav" Content="{Binding SelectedPage}" />
+    </StackPanel>
 </Window>

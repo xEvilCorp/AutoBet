@@ -1,11 +1,6 @@
-﻿using AutoBet.Services;
+﻿using AutoBet.App.ViewModels;
+using AutoBet.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace AutoBet.App
@@ -24,19 +19,24 @@ namespace AutoBet.App
             serviceProvider = services.BuildServiceProvider();
         }
 
-        private void ConfigureServices(ServiceCollection services)
-        {
-            services.AddSingleton<CertificateService>();
+private void ConfigureServices(ServiceCollection services)
+{
+    services.AddSingleton<MainWindow>();
 
-            services.AddHttpClient<BetfairAuthService>()
-                        .ConfigurePrimaryHttpMessageHandler<BetfairAuthHandlerService>();
+    //ViewModels
+    services.AddSingleton<MainViewModel>();
+    services.AddSingleton<AuthViewModel>();
 
-            services.AddSingleton<MainWindow>();
-        }
-        private void OnStartup(object sender, StartupEventArgs e)
-        {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.Show();
-        }
+    //Services
+    services.AddSingleton<CertificateService>();
+    services.AddSingleton<MainNavigationService>();
+    services.AddHttpClient<BetfairAuthService>().ConfigurePrimaryHttpMessageHandler<BetfairAuthHandlerService>();
+}
+private void OnStartup(object sender, StartupEventArgs e)
+{
+    var mainWindow = serviceProvider.GetService<MainWindow>();
+    mainWindow.DataContext = serviceProvider.GetService<MainViewModel>();
+    mainWindow.Show();
+}
     }
 }

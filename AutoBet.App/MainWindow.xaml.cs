@@ -1,4 +1,5 @@
-﻿using AutoBet.Services;
+﻿using AutoBet.App.ViewModels;
+using AutoBet.Services;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -9,11 +10,10 @@ namespace AutoBet.App
 {
     public partial class MainWindow : Window
     {
-        private CertificateService certificateService;
-        public MainWindow(CertificateService service)
+        public MainWindow(MainViewModel vm)
         {
             InitializeComponent();
-            certificateService = service;
+            DataContext = vm;
         }
     }
 }
