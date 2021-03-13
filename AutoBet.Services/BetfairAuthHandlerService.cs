@@ -11,7 +11,7 @@ namespace AutoBet.Services
         {
             ClientCertificateOptions = ClientCertificateOption.Manual;
             SslProtocols = SslProtocols.Tls12;
-            ClientCertificates.Add(GetCertificate());
+            //ClientCertificates.Add(GetCertificate());
         }
 
         private X509Certificate2 GetCertificate()

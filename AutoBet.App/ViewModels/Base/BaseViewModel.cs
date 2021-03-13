@@ -14,7 +14,7 @@ using System.Windows.Threading;
 
 namespace AutoBet.App.ViewModels
 {
-    public class BaseViewModel : IPageViewModel
+    public abstract class BaseViewModel : IPageViewModel
     {
         public string PageTitle { get; set; }
 

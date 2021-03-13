@@ -1,17 +1,32 @@
-﻿using AutoBet.Domain.Interfaces;
+﻿using AutoBet.Domain.Entities;
+using AutoBet.Domain.Enums;
+using AutoBet.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
+using System.Windows.Input;
 
 namespace AutoBet.App.ViewModels
 {
+    public delegate void Notify();  // delegate
+
     public class AuthViewModel : BaseViewModel
     {
-        public AuthViewModel()
+        #region Properties
+        public ICommand LoginCMD { get; set; }
+        private IBetfairAuthService BetfairAuthService { get; }
+        public event Notify AuthenticationPassed;
+        #endregion Properties
+
+        public AuthViewModel() {}
+        public AuthViewModel(IBetfairAuthService authService) 
         {
+            BetfairAuthService = authService;
+            LoginCMD = new RelayCommand((o) => Login());
+        }
+
+
+        public void Login()
+        {
+            AuthenticationPassed?.Invoke();
         }
     }
 }

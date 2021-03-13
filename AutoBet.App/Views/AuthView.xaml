@@ -3,11 +3,34 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AutoBet.App.Views"
+      xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
       mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance vm:AuthViewModel, IsDesignTimeCreatable=True}"
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        
+        <Grid.DataContext>
+            <vm:AuthViewModel/>
+        </Grid.DataContext>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF095E99" Offset="1"/>
+                <GradientStop Color="#FF19A1FF" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="315,376,0,0" VerticalAlignment="Top" Height="45" Width="140" Command="{Binding LoginCMD}"/>
+        <Border BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="200" Background="White" CornerRadius="20,20,20,20">
+            <StackPanel Margin="20,20,20,20">
+                <TextBlock TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" >
+                    <Run Text="Sign In to"  Foreground="#FF005FBD"/>
+                    <Run Text="Betfair" Foreground="Gold"/>
+                </TextBlock>
+                <Separator Height="1"/>
+                <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+                <TextBox Text="TextBox" TextWrapping="Wrap"/>
+                <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+                <TextBox Text="TextBox" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoBet.Domain.Interfaces
+namespace AutoBet.App.ViewModels
 {
-    public interface INavigable
+    public class HomeViewModel : BaseViewModel
     {
-        bool TrySelect(string title);
+        public HomeViewModel()
+        {
+
+        }
     }
 }

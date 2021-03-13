@@ -1,4 +1,5 @@
-﻿using AutoBet.Domain.Interfaces;
+﻿using AutoBet.Domain.Enums;
+using AutoBet.Domain.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Windows.Input;
 
 namespace AutoBet.App.ViewModels
 {
-    public class MainViewModel 
+    public class MainViewModel : BaseViewModel
     {
+        #region Properties
         private IPageViewModel selectedPage;
         public IPageViewModel SelectedPage
         {
@@ -40,18 +42,20 @@ namespace AutoBet.App.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion Properties
 
-        public MainViewModel(AuthViewModel authViewModel)
+        public MainViewModel(AuthViewModel authVM, HomeViewModel homeVM)
         {
-            this.Pages = new ObservableCollection<IPageViewModel>()  { authViewModel  };
+            this.Pages = new ObservableCollection<IPageViewModel>()  { authVM, homeVM };
             this.SelectedPage = this.Pages.First();
+            authVM.AuthenticationPassed += () => Navigate(AppPages.Home);
         }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void Navigate(AppPages page)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            SelectedPage = Pages[(int)page];
         }
+
+
     }
 }

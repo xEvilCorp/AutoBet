@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AutoBet.App"
+             xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
+             xmlns:views="clr-namespace:AutoBet.App.Views"
              Startup="OnStartup">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type vm:AuthViewModel}">
+            <views:AuthView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <views:HomeView />
+        </DataTemplate>
     </Application.Resources>
 </Application>
