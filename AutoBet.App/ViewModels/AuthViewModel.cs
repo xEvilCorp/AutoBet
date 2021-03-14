@@ -25,9 +25,7 @@ namespace AutoBet.App.ViewModels
 
         public void Login()
         {
-            L.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
-
-            //AuthenticationPassed?.Invoke();
+            AuthenticationPassed?.Invoke();
         }
 
     }

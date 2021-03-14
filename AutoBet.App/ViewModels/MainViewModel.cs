@@ -1,10 +1,7 @@
 ﻿using AutoBet.Domain.Enums;
 using AutoBet.Domain.Interfaces;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
 
 namespace AutoBet.App.ViewModels
 {
@@ -55,7 +52,5 @@ namespace AutoBet.App.ViewModels
         {
             SelectedPage = Pages[(int)page];
         }
-
-
     }
 }

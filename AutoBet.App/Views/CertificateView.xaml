@@ -4,9 +4,88 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AutoBet.App.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+
+    <Grid Background="#FF1D1732">
+        <StackPanel Width="Auto" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="#FFAAAAAA" Width="350" Background="White" CornerRadius="2,2,2,2">
+                <StackPanel Margin="20,20,20,20">
+                    <Grid>
+                        <WrapPanel VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Certificate" Foreground="#FF3900D3" Height="20" Width="20" Margin="0 0 5 0"/>
+                            <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" Text="Certificate" Foreground="#FF3900D3" />
+                            <Ellipse Width="7" Height="7" Fill="#FFBD2A2A" Margin="6 2 2 0" />
+                            <TextBlock  Foreground="#FFBD2A2A" VerticalAlignment="Center"  FontSize="10">
+                                <Run Text="Status:"/>
+                                <Run Text="Missing"/>
+                            </TextBlock>
+                        </WrapPanel>
+                        <Button  HorizontalAlignment="Right" Content="Import" Height="20" FontSize="10"   Padding="10 2 10 3"/>
+                    </Grid>
+                    <Separator Height="1" Background="#FFE0E0E0" Margin="0,6,0,5"/>
+
+
+                    <TextBlock Text="{Binding L[Name@Upper],FallbackValue=Name}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                    <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                        <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                    </Border>
+                    <TextBlock Text="{Binding L[Email@Upper],FallbackValue=Email}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                    <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                        <TextBox materialDesign:HintAssist.Hint="Ex: email@domain.com" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                    </Border>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="{Binding L[Organization@Upper],FallbackValue=Organization}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                            <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="{Binding L[OrganizationUnit@Upper],FallbackValue=Organization Unit}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                            <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                    <TextBlock Text="{Binding L[Country@Upper],FallbackValue=Country}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                    <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                        <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                    </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="{Binding L[State@Upper],FallbackValue=State}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                            <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="{Binding L[City@Upper],FallbackValue=City}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                            <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
+                                <TextBox  materialDesign:HintAssist.Hint="Ex: London" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+            <DockPanel Margin="0,10,0,0">
+                <Button DockPanel.Dock="Right"  Margin="5 0 0 0" Height="46"  Command="{Binding LoginCMD}" BorderThickness="0,0,0,0" FontSize="50" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0">
+                    <materialDesign:PackIcon Kind="Download"  Height="20" Width="20" />
+                </Button>
+                <Button Content="Generate certificate" Height="46" Command="{Binding LoginCMD}" BorderThickness="0,0,0,0" FontSize="16" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0" />
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

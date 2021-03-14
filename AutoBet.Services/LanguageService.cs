@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
 
@@ -28,7 +27,6 @@ namespace AutoBet.Services
 
         public string this[string input]
         {
-
             get
             {
                 if(input.Contains('@'))
@@ -58,11 +56,9 @@ namespace AutoBet.Services
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnCultureChanged()
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }
-
     }
 }
