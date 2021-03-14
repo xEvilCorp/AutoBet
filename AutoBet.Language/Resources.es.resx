@@ -270,4 +270,19 @@
   <data name="ORGANIZATION_UNIT_FIELD_SPECIAL_CHAR" xml:space="preserve">
     <value>El campo nombre de unidad organizativa no debe contener caracteres especiales.</value>
   </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="REMEMBER_CREDENTIALS" xml:space="preserve">
+    <value>Recordar credenciales</value>
+  </data>
+  <data name="SIGN_IN" xml:space="preserve">
+    <value>Inicia sesión</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
 </root>

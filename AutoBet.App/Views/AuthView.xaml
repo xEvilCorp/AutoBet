@@ -3,34 +3,45 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
+      xmlns:vm="clr-namespace:AutoBet.App.ViewModels" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance vm:AuthViewModel, IsDesignTimeCreatable=True}"
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
-        <Grid.DataContext>
-            <vm:AuthViewModel/>
-        </Grid.DataContext>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF095E99" Offset="1"/>
-                <GradientStop Color="#FF19A1FF" Offset="0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="315,376,0,0" VerticalAlignment="Top" Height="45" Width="140" Command="{Binding LoginCMD}"/>
-        <Border BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="200" Background="White" CornerRadius="20,20,20,20">
-            <StackPanel Margin="20,20,20,20">
-                <TextBlock TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" >
-                    <Run Text="Sign In to"  Foreground="#FF005FBD"/>
-                    <Run Text="Betfair" Foreground="Gold"/>
-                </TextBlock>
-                <Separator Height="1"/>
-                <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
-                <TextBox Text="TextBox" TextWrapping="Wrap"/>
-                <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
-                <TextBox Text="TextBox" TextWrapping="Wrap"/>
-            </StackPanel>
-        </Border>
+    <Grid Background="#FF1D1732">
+        <StackPanel Width="Auto" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="#FFAAAAAA" Width="269" Background="White" CornerRadius="2,2,2,2">
+                <StackPanel Margin="20,20,20,20">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" Text="Betfair" />
+                        <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" Text="Sign up" Foreground="#FF3900D3" />
+                    </Grid>
+                    <Separator Height="1" Background="#FFE0E0E0" Margin="0,6,0,5"/>
+                    <TextBlock Text="CERTIFICATE" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E" Margin="0,8,0,3"/>
+                    <Grid>
+                        <Border Background="#FFDEDEDE"  HorizontalAlignment="Stretch" CornerRadius="3">
+                            <TextBlock Text="Status: Missing" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8,0,34,0" Foreground="{DynamicResource MaterialDesignLightForeground}"/>
+                        </Border>
+
+                        <Button  Style="{DynamicResource MaterialDesignToolButton}"  Width="33" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Kind="Pencil" />
+                        </Button>
+
+                    </Grid>
+
+                    <TextBlock Text="{Binding L[USERNAME], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                    <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,4,5,4" CornerRadius="2,2,2,2">
+                        <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                    </Border>
+                    <TextBlock Text="PASSWORD" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                    <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,4,5,4" CornerRadius="2,2,2,2">
+                        <PasswordBox  BorderThickness="0,0,0,0"/>
+                    </Border>
+                    <CheckBox Content="Remember credentials" Margin="0,10,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                </StackPanel>
+            </Border>
+            <Button Content="Login" Height="46" Command="{Binding LoginCMD}" BorderThickness="0,0,0,0" FontSize="16" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0" Margin="0,10,0,0"/>
+        </StackPanel>
     </Grid>
 </UserControl>

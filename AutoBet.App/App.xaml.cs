@@ -4,6 +4,10 @@ using AutoBet.Domain.Interfaces;
 using AutoBet.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
+using AutoBet.Language;
+using System.Globalization;
+using System.Collections.Generic;
+using Microsoft.Extensions.Localization;
 
 namespace AutoBet.App
 {
@@ -31,7 +35,7 @@ namespace AutoBet.App
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<BetfairAuthHandlerService>();
 
-            //services.AddSingleton<INavigator, Navigator>();
+            services.AddLocalization();
 
             //Services
             services.AddSingleton<CertificateService>();

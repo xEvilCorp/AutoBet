@@ -1,4 +1,5 @@
 ﻿using AutoBet.Domain.Interfaces;
+using Microsoft.Extensions.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,19 @@ namespace AutoBet.App.ViewModels
     public abstract class BaseViewModel : IPageViewModel
     {
         public string PageTitle { get; set; }
+        private IStringLocalizer localizer;
+        public IStringLocalizer L
+        {
+            get
+            {
+                return localizer;
+            }
+            set
+            {
+                localizer = value;
+                OnPropertyChanged();
+            }
+        }
 
         internal static Timer SetInterval(Action Act, int Interval)
         {
