@@ -1,8 +1,5 @@
-﻿using AutoBet.Domain.Entities;
-using AutoBet.Domain.Enums;
-using AutoBet.Domain.Interfaces;
-using Microsoft.Extensions.Localization;
-using System;
+﻿using AutoBet.Domain.Interfaces;
+using AutoBet.Services;
 using System.Windows.Input;
 
 namespace AutoBet.App.ViewModels
@@ -18,21 +15,20 @@ namespace AutoBet.App.ViewModels
         #endregion Properties
 
         public AuthViewModel() { }
-        public AuthViewModel(IBetfairAuthService authService, IStringLocalizer<Language.Resources> localizer)
+        public AuthViewModel(IBetfairAuthService authService, LanguageService lang)
         {
+            L = lang;
             BetfairAuthService = authService;
-            L = localizer;
             LoginCMD = new RelayCommand((o) => Login());
         }
 
 
         public void Login()
         {
-            string username = L["USERNAME"];
-            Language.Resources.Culture = new System.Globalization.CultureInfo("es");
-            username = L["USERNAME"];
+            L.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
 
             //AuthenticationPassed?.Invoke();
         }
+
     }
 }

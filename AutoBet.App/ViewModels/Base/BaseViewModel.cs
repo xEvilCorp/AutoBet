@@ -1,36 +1,30 @@
 ﻿using AutoBet.Domain.Interfaces;
-using Microsoft.Extensions.Localization;
+using AutoBet.Services;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Navigation;
-using System.Windows.Threading;
 
 namespace AutoBet.App.ViewModels
 {
     public abstract class BaseViewModel : IPageViewModel
     {
+        #region Common Properties
         public string PageTitle { get; set; }
-        private IStringLocalizer localizer;
-        public IStringLocalizer L
+        private LanguageService languageService;
+        public LanguageService L
         {
             get
             {
-                return localizer;
+                return languageService;
             }
             set
             {
-                localizer = value;
+                languageService = value;
                 OnPropertyChanged();
             }
         }
+        #endregion Common Properties
 
         internal static Timer SetInterval(Action Act, int Interval)
         {
@@ -43,11 +37,13 @@ namespace AutoBet.App.ViewModels
             return tmr;
         }
 
+        #region Interface implementation
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion Interface implementation
     }
 }

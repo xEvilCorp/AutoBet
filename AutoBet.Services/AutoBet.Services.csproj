@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AutoBet.Domain\AutoBet.Domain.csproj" />
+    <ProjectReference Include="..\AutoBet.Language\AutoBet.Language.csproj" />
   </ItemGroup>
 
 </Project>

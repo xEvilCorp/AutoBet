@@ -1,13 +1,8 @@
 ﻿using AutoBet.App.ViewModels;
-using AutoBet.Domain.Entities;
 using AutoBet.Domain.Interfaces;
 using AutoBet.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
-using AutoBet.Language;
-using System.Globalization;
-using System.Collections.Generic;
-using Microsoft.Extensions.Localization;
 
 namespace AutoBet.App
 {
@@ -27,19 +22,16 @@ namespace AutoBet.App
 
         private void ConfigureServices(ServiceCollection services)
         {
+            services.AddSingleton<LanguageService>();
             services.AddSingleton<MainWindow>();
-
             //ViewModels
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<AuthViewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<BetfairAuthHandlerService>();
 
-            services.AddLocalization();
-
             //Services
             services.AddSingleton<CertificateService>();
-            services.AddSingleton<MainNavigationService>();
             services.AddHttpClient<IBetfairAuthService,BetfairAuthService>().ConfigurePrimaryHttpMessageHandler<BetfairAuthHandlerService>();
         }
         private void OnStartup(object sender, StartupEventArgs e)
