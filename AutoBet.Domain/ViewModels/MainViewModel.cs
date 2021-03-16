@@ -3,7 +3,7 @@ using AutoBet.Domain.Interfaces;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace AutoBet.App.ViewModels
+namespace AutoBet.Domain.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {

@@ -1,5 +1,4 @@
-﻿using AutoBet.App.ViewModels;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace AutoBet.App.Views
 {

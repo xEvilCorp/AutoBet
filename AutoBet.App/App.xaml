@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AutoBet.App"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
+             xmlns:vm="clr-namespace:AutoBet.Domain.ViewModels;assembly=AutoBet.Domain"
              xmlns:views="clr-namespace:AutoBet.App.Views"
              Startup="OnStartup">
     <Application.Resources>

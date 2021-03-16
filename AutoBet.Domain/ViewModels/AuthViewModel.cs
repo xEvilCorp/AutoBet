@@ -1,8 +1,7 @@
 ﻿using AutoBet.Domain.Interfaces;
-using AutoBet.Services;
 using System.Windows.Input;
 
-namespace AutoBet.App.ViewModels
+namespace AutoBet.Domain.ViewModels
 {
     public delegate void Notify();
 
@@ -18,7 +17,7 @@ namespace AutoBet.App.ViewModels
         #endregion Properties
 
         public AuthViewModel() { }
-        public AuthViewModel(IBetfairAuthService authService, LanguageService lang)
+        public AuthViewModel(IBetfairAuthService authService, ILanguageService lang)
         {
             L = lang;
             BetfairAuthService = authService;

@@ -1,18 +1,17 @@
 ﻿using AutoBet.Domain.Interfaces;
-using AutoBet.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Timers;
 
-namespace AutoBet.App.ViewModels
+namespace AutoBet.Domain.ViewModels
 {
     public abstract class BaseViewModel : IPageViewModel
     {
         #region Common Properties
         public string PageTitle { get; set; }
-        private LanguageService languageService;
-        public LanguageService L
+        private ILanguageService languageService;
+        public ILanguageService L
         {
             get
             {

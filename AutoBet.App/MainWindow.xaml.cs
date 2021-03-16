@@ -1,6 +1,4 @@
-﻿using AutoBet.App.ViewModels;
-using AutoBet.Domain.Interfaces;
-using System.Windows;
+﻿using System.Windows;
 
 namespace AutoBet.App
 {

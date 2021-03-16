@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using AutoBet.Domain.Interfaces;
+using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
 
 namespace AutoBet.Services
 {
-    public class LanguageService : INotifyPropertyChanged
+    public class LanguageService : ILanguageService
     {
         private readonly ResourceManager ResourceManager;
 

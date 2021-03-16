@@ -1,5 +1,5 @@
-﻿using AutoBet.App.ViewModels;
-using AutoBet.Domain.Interfaces;
+﻿using AutoBet.Domain.Interfaces;
+using AutoBet.Domain.ViewModels;
 using AutoBet.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
@@ -11,19 +11,20 @@ namespace AutoBet.App
     /// </summary>
     public partial class App : Application
     {
-        private ServiceProvider serviceProvider;
+        public static ServiceProvider container;
 
         public App()
         {
             ServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
-            serviceProvider = services.BuildServiceProvider();
+            container = services.BuildServiceProvider();
         }
 
         private void ConfigureServices(ServiceCollection services)
         {
-            services.AddSingleton<LanguageService>();
+            services.AddSingleton<ILanguageService, LanguageService>();
             services.AddSingleton<MainWindow>();
+
             //ViewModels
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<AuthViewModel>();
@@ -37,8 +38,8 @@ namespace AutoBet.App
         }
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.DataContext = serviceProvider.GetService<MainViewModel>();
+            var mainWindow = container.GetService<MainWindow>();
+            mainWindow.DataContext = container.GetService<MainViewModel>();
             mainWindow.Show();
         }
     }

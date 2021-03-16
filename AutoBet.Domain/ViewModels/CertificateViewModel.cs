@@ -1,12 +1,7 @@
-﻿using AutoBet.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoBet.Domain.Interfaces;
 using System.Windows.Input;
 
-namespace AutoBet.App.ViewModels
+namespace AutoBet.Domain.ViewModels
 {
     public class CertificateViewModel : BaseViewModel
     {
@@ -132,7 +127,7 @@ namespace AutoBet.App.ViewModels
 
         #endregion Properties
         public CertificateViewModel() { }
-        public CertificateViewModel(LanguageService lang)
+        public CertificateViewModel(ILanguageService lang)
         {
             L = lang;
             GenerateCertificateCMD = new RelayCommand(GenerateCertificate);
