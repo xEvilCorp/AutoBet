@@ -4,36 +4,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AutoBet.App.Views"
+             xmlns:vm="clr-namespace:AutoBet.App.ViewModels"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance vm:CertificateViewModel, IsDesignTimeCreatable=True}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="root">
 
     <Grid Background="#FF1D1732">
-        <StackPanel Width="Auto" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Border BorderBrush="#FFAAAAAA" Width="350" Background="White" CornerRadius="2,2,2,2">
+        <StackPanel Width="Auto" Height="Auto" VerticalAlignment="Center"  MaxWidth="350"  >
+            <Border BorderBrush="#FFAAAAAA" Background="White" CornerRadius="2,2,2,2">
                 <StackPanel Margin="20,20,20,20">
                     <Grid>
                         <WrapPanel VerticalAlignment="Center">
                             <materialDesign:PackIcon Kind="Certificate" Foreground="#FF3900D3" Height="20" Width="20" Margin="0 0 5 0"/>
-                            <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" Text="Certificate" Foreground="#FF3900D3" />
-                            <Ellipse Width="7" Height="7" Fill="#FFBD2A2A" Margin="6 2 2 0" />
-                            <TextBlock  Foreground="#FFBD2A2A" VerticalAlignment="Center"  FontSize="10">
-                                <Run Text="Status:"/>
-                                <Run Text="Missing"/>
-                            </TextBlock>
+                            <TextBlock   Text="{Binding L[Certificate],FallbackValue=Certificate}"  HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontWeight="Normal" FontSize="14" FontFamily="Bahnschrift" Foreground="#FF3900D3" />
+                            <Label VerticalAlignment="Center">
+                                <Label.Style>
+                                    <Style TargetType="{x:Type Label}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsCertificateValid}" Value="False">
+                                                <Setter Property="ContentTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <WrapPanel>
+                                                                <Ellipse Width="7" Height="7" Fill="#FFBD2A2A" Margin="6 2 2 0" />
+                                                                <TextBlock  Foreground="#FFBD2A2A" VerticalAlignment="Center"  FontSize="10">
+                                                                    <Run Text="{Binding DataContext.L[Status], ElementName=root, FallbackValue=Status, Mode=OneWay}"/>:
+                                                                    <Run Text="{Binding DataContext.L[Missing],ElementName=root, FallbackValue=Missing, Mode=OneWay}"/>
+                                                                </TextBlock>
+                                                            </WrapPanel>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsCertificateValid}" Value="True">
+                                                <Setter Property="ContentTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <WrapPanel>
+                                                                <Ellipse Width="7" Height="7" Fill="#FF03890F" Margin="6 2 2 0" />
+                                                                <TextBlock  Foreground="#FF03890F" VerticalAlignment="Center"  FontSize="10">
+                                                                    <Run Text="{Binding DataContext.L[Status], ElementName=root, FallbackValue=Status, Mode=OneWay}"/>:
+                                                                    <Run Text="OK"/>
+                                                                </TextBlock>
+                                                            </WrapPanel>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
                         </WrapPanel>
-                        <Button  HorizontalAlignment="Right" Content="Import" Height="20" FontSize="10"   Padding="10 2 10 3"/>
+                        <Button  Content="{Binding L[Import],FallbackValue=Import}" Command="{Binding ImportCertificateCMD}" HorizontalAlignment="Right" Height="20" FontSize="10"   Padding="10 2 10 3"/>
                     </Grid>
                     <Separator Height="1" Background="#FFE0E0E0" Margin="0,6,0,5"/>
 
 
                     <TextBlock Text="{Binding L[Name@Upper],FallbackValue=Name}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                     <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                        <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                        <TextBox Text="{Binding Name}" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                     </Border>
                     <TextBlock Text="{Binding L[Email@Upper],FallbackValue=Email}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                     <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                        <TextBox materialDesign:HintAssist.Hint="Ex: email@domain.com" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                        <TextBox Text="{Binding Email}" materialDesign:HintAssist.Hint="Ex: email@domain.com" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                     </Border>
 
                     <Grid>
@@ -45,19 +80,19 @@
                         <StackPanel>
                             <TextBlock Text="{Binding L[Organization@Upper],FallbackValue=Organization}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                             <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                                <TextBox Text="{Binding Organization}" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                             </Border>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text="{Binding L[OrganizationUnit@Upper],FallbackValue=Organization Unit}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
+                            <TextBlock Text="{Binding L[Organization_Unit@Upper],FallbackValue=Organization Unit}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                             <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                                <TextBox Text="{Binding OrganizationUnit}" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                             </Border>
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="{Binding L[Country@Upper],FallbackValue=Country}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                     <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                        <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                        <TextBox Text="{Binding Country}" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                     </Border>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -68,23 +103,23 @@
                         <StackPanel>
                             <TextBlock Text="{Binding L[State@Upper],FallbackValue=State}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                             <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                                <TextBox TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                                <TextBox Text="{Binding State}" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                             </Border>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
                             <TextBlock Text="{Binding L[City@Upper],FallbackValue=City}" TextWrapping="Wrap" Margin="0,8,0,3" FontFamily="Segoe UI Semibold" FontSize="9" Foreground="#FF2E2E2E"/>
                             <Border BorderThickness="1" BorderBrush="#FFBBBBBB" Padding="5,3,5,3" CornerRadius="2,2,2,2">
-                                <TextBox  materialDesign:HintAssist.Hint="Ex: London" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
+                                <TextBox Text="{Binding City}" materialDesign:HintAssist.Hint="Ex: London" TextWrapping="Wrap" BorderThickness="0,0,0,0"/>
                             </Border>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
             </Border>
             <DockPanel Margin="0,10,0,0">
-                <Button DockPanel.Dock="Right"  Margin="5 0 0 0" Height="46"  Command="{Binding LoginCMD}" BorderThickness="0,0,0,0" FontSize="50" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0">
+                <Button DockPanel.Dock="Right"  Margin="5 0 0 0" Height="46"  Command="{Binding SaveCertificateCMD}" BorderThickness="0,0,0,0" FontSize="50" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0">
                     <materialDesign:PackIcon Kind="Download"  Height="20" Width="20" />
                 </Button>
-                <Button Content="Generate certificate" Height="46" Command="{Binding LoginCMD}" BorderThickness="0,0,0,0" FontSize="16" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0" />
+                <Button Content="{Binding L[Generate_Certificate],FallbackValue=Generate Certificate}" Height="46" Command="{Binding GenerateCertificateCMD}" BorderThickness="0,0,0,0" FontSize="16" FontFamily="Bahnschrift Light" Foreground="White" Background="#FF7800B0" />
             </DockPanel>
         </StackPanel>
     </Grid>

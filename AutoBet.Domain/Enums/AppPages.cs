@@ -9,6 +9,7 @@ namespace AutoBet.Domain.Enums
     public enum AppPages
     {
         Auth,
-        Home
+        Home,
+        ManageCertificate
     }
 }

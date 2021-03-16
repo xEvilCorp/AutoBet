@@ -151,6 +151,15 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Certificate.
+        /// </summary>
+        public static string CERTIFICATE {
+            get {
+                return ResourceManager.GetString("CERTIFICATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change password required.
         /// </summary>
         public static string CHANGE_PASSWORD_REQUIRED {
@@ -160,11 +169,29 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string CITY {
+            get {
+                return ResourceManager.GetString("CITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The account is closed.
         /// </summary>
         public static string CLOSED {
             get {
                 return ResourceManager.GetString("CLOSED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string COUNTRY {
+            get {
+                return ResourceManager.GetString("COUNTRY", resourceCulture);
             }
         }
         
@@ -205,6 +232,15 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string EMAIL {
+            get {
+                return ResourceManager.GetString("EMAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This account has not opted in to log in with the email.
         /// </summary>
         public static string EMAIL_LOGIN_NOT_ALLOWED {
@@ -219,6 +255,24 @@ namespace AutoBet.Language {
         public static string EMAIL_MUST_BE_VALID {
             get {
                 return ResourceManager.GetString("EMAIL_MUST_BE_VALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate Certificate.
+        /// </summary>
+        public static string GENERATE_CERTIFICATE {
+            get {
+                return ResourceManager.GetString("GENERATE_CERTIFICATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string IMPORT {
+            get {
+                return ResourceManager.GetString("IMPORT", resourceCulture);
             }
         }
         
@@ -304,11 +358,29 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing.
+        /// </summary>
+        public static string MISSING {
+            get {
+                return ResourceManager.GetString("MISSING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is more than one account with the same credential.
         /// </summary>
         public static string MULTIPLE_USERS_WITH_SAME_CREDENTIAL {
             get {
                 return ResourceManager.GetString("MULTIPLE_USERS_WITH_SAME_CREDENTIAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string NAME {
+            get {
+                return ResourceManager.GetString("NAME", resourceCulture);
             }
         }
         
@@ -349,11 +421,29 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organization.
+        /// </summary>
+        public static string ORGANIZATION {
+            get {
+                return ResourceManager.GetString("ORGANIZATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The organization name field must not contain any special characters..
         /// </summary>
         public static string ORGANIZATION_FIELD_SPECIAL_CHAR {
             get {
                 return ResourceManager.GetString("ORGANIZATION_FIELD_SPECIAL_CHAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Organization unit.
+        /// </summary>
+        public static string ORGANIZATION_UNIT {
+            get {
+                return ResourceManager.GetString("ORGANIZATION_UNIT", resourceCulture);
             }
         }
         
@@ -466,11 +556,29 @@ namespace AutoBet.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string STATE {
+            get {
+                return ResourceManager.GetString("STATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The state/province field must not contain any special characters..
         /// </summary>
         public static string STATE_FIELD_SPECIAL_CHAR {
             get {
                 return ResourceManager.GetString("STATE_FIELD_SPECIAL_CHAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string STATUS {
+            get {
+                return ResourceManager.GetString("STATUS", resourceCulture);
             }
         }
         

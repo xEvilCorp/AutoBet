@@ -24,7 +24,7 @@
                             <TextBlock Text="Status: Missing" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8,0,34,0" Foreground="{DynamicResource MaterialDesignLightForeground}"/>
                         </Border>
 
-                        <Button  Style="{DynamicResource MaterialDesignToolButton}"  Width="33" HorizontalAlignment="Right">
+                        <Button  Style="{DynamicResource MaterialDesignToolButton}"  Command="{Binding EditCertificateCMD}" Width="33" HorizontalAlignment="Right">
                             <materialDesign:PackIcon Kind="Pencil" />
                         </Button>
 

@@ -27,6 +27,7 @@ namespace AutoBet.App
             //ViewModels
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<AuthViewModel>();
+            services.AddSingleton<CertificateViewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<BetfairAuthHandlerService>();
 

@@ -41,11 +41,12 @@ namespace AutoBet.App.ViewModels
         }
         #endregion Properties
 
-        public MainViewModel(AuthViewModel authVM, HomeViewModel homeVM)
+        public MainViewModel(AuthViewModel authVM, HomeViewModel homeVM, CertificateViewModel certVM)
         {
-            this.Pages = new ObservableCollection<IPageViewModel>()  { authVM, homeVM };
+            this.Pages = new ObservableCollection<IPageViewModel>()  { authVM, homeVM, certVM };
             this.SelectedPage = this.Pages.First();
             authVM.AuthenticationPassed += () => Navigate(AppPages.Home);
+            authVM.EditCertificateClicked += () => Navigate(AppPages.ManageCertificate);
         }
 
         public void Navigate(AppPages page)

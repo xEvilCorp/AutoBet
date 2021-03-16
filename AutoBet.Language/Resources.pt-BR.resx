@@ -265,4 +265,40 @@
   <data name="LOGIN" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="COUNTRY" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ORGANIZATION" xml:space="preserve">
+    <value>Organização</value>
+  </data>
+  <data name="ORGANIZATION_UNIT" xml:space="preserve">
+    <value>Unidade de organização</value>
+  </data>
+  <data name="GENERATE_CERTIFICATE" xml:space="preserve">
+    <value>Gerar Certificado</value>
+  </data>
+  <data name="CERTIFICATE" xml:space="preserve">
+    <value>Certificado</value>
+  </data>
+  <data name="STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="IMPORT" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="MISSING" xml:space="preserve">
+    <value>Faltando</value>
+  </data>
 </root>

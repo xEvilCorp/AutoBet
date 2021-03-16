@@ -53,6 +53,7 @@ namespace AutoBet.Services
         public LanguageService()
         {
             ResourceManager = Language.Resources.ResourceManager;
+            CurrentCulture = new CultureInfo("pt-BR");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
