@@ -9,23 +9,23 @@ namespace AutoBet.Domain.Entities
 {
     public class CertificateInfo : Base
     {
-        public string CommonName { get; private set; }
+        public string Name { get; private set; }
         public string Email { get; private set; }
         public string Organization { get; private set; }
-        public string OrganizationalUnitName  { get; private set; }
+        public string OrganizationUnit  { get; private set; }
         public string Country { get; private set; }
         public string State { get; private set; }
-        public string Locality { get; private set; }
+        public string City { get; private set; }
 
         public CertificateInfo(string commonName, string email, string organization, string organizationalUnitName, string country, string state, string locality)
         {
-            this.CommonName = commonName;
+            this.Name = commonName;
             this.Email = email;
             this.Organization = organization;
-            this.OrganizationalUnitName = organizationalUnitName;
+            this.OrganizationUnit = organizationalUnitName;
             this.Country = country;
             this.State = state;
-            this.Locality = locality;
+            this.City = locality;
         }
 
         public override bool Valid()

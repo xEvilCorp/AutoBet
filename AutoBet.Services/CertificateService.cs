@@ -16,7 +16,7 @@ namespace AutoBet.Services
         public X509Certificate2 Create(CertificateInfo c)
         {
             ECDsa key = ECDsa.Create();
-            string certificateSubject = $"CN={c.CommonName};O={c.Organization};OU={c.OrganizationalUnitName};E={c.Email};C={c.Country};S={c.State};L={c.Locality}";
+            string certificateSubject = $"CN={c.Name};O={c.Organization};OU={c.OrganizationUnit};E={c.Email};C={c.Country};S={c.State};L={c.City}";
             CertificateRequest request = new CertificateRequest(certificateSubject, key, HashAlgorithmName.SHA256);
             X509Certificate2 certificate = request.CreateSelfSigned(DateTimeOffset.Now, DateTimeOffset.Now.AddYears(5));
             return certificate;
@@ -39,17 +39,21 @@ namespace AutoBet.Services
         public X509Certificate2 GetBetfairCertificate()
         {
             X509Store store = new X509Store("ugabogus", StoreLocation.CurrentUser);
-            store.Open(OpenFlags.OpenExistingOnly);
-            return store.Certificates[0];
+            store.Open(OpenFlags.ReadWrite);
+
+            if (store.Certificates.Count is not 0)
+                return store.Certificates[0];
+
+            return null;
         }
 
         public CertificateInfo GetInfo(string subject)
         {
-            var kvs = subject.Split(',').Select(x => new KeyValuePair<string, string>(x.Split('=')[0], x.Split('=')[1])).ToList();
-            
+            var kvs = subject.Split(',').Select(x => new KeyValuePair<string, string>(x.Split('=')[0].Trim(), x.Split('=')[1].Trim())).ToList();
+
             CertificateInfo certificateInfo = new CertificateInfo
             (
-                commonName:  kvs.Find(x=>x.Key == "CN").Value,
+                commonName: kvs.Find(x => x.Key == "CN").Value,
                 email: kvs.Find(x => x.Key == "E").Value,
                 organization: kvs.Find(x => x.Key == "O").Value,
                 organizationalUnitName: kvs.Find(x => x.Key == "OU").Value,

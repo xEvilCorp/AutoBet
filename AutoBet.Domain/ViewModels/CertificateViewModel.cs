@@ -1,8 +1,6 @@
 ﻿using AutoBet.Domain.Entities;
 using AutoBet.Domain.Interfaces;
 using AutoMapper;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
 
@@ -11,7 +9,8 @@ namespace AutoBet.Domain.ViewModels
     public class CertificateViewModel : BaseViewModel
     {
         #region Properties
-        private readonly ICertificateService CertificateService;
+        private readonly ICertificateService certificateService;
+        private readonly IMapper mapper;
 
         public ICommand GenerateCertificateCMD { get; }
         public ICommand SaveCertificateCMD { get; }
@@ -134,14 +133,27 @@ namespace AutoBet.Domain.ViewModels
         #endregion Properties
 
         public CertificateViewModel() { }
-        public CertificateViewModel(ICertificateService certificateService, ILanguageService languageService, IMapper mapper)
+        public CertificateViewModel(ICertificateService certService, ILanguageService langService, IMapper mapService)
         {
-            L = languageService; CertificateService = certificateService;
+            L = langService; certificateService = certService; mapper = mapService;
             GenerateCertificateCMD = new RelayCommand(GenerateCertificate);
             SaveCertificateCMD = new RelayCommand(SaveCertificate);
+
+            InitializeInfo();
         }
 
-        void GenerateCertificate(object  o)
+        void InitializeInfo()
+        {
+            X509Certificate2 cert = certificateService.GetBetfairCertificate();
+            if (cert != null)
+            {
+                IsCertificateValid = true;
+                CertificateInfo info = certificateService.GetInfo(cert.Subject);
+                mapper.Map(info, this);
+            }
+        }
+
+        void GenerateCertificate(object o)
         {
 
         }
@@ -152,14 +164,11 @@ namespace AutoBet.Domain.ViewModels
 
         public void ImportCertificate(string filepath)
         {
-            X509Certificate2  cert = CertificateService.GetCertificate(filepath);
-            CertificateInfo info = CertificateService.GetInfo(cert.Subject);
-            Name = info.CommonName;
-            Email = info.Email;
-            Organization = info.Organization;
-            OrganizationUnit = info.OrganizationalUnitName;
-            Country = info.Country;
-            IsCertificateValid = !IsCertificateValid;
+            X509Certificate2 cert = certificateService.GetCertificate(filepath);
+            CertificateInfo info = certificateService.GetInfo(cert.Subject);
+            certificateService.AddOrReplace(cert);
+            mapper.Map(info, this);
+            IsCertificateValid = true;
         }
 
     }
