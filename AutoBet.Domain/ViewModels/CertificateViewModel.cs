@@ -1,4 +1,9 @@
-﻿using AutoBet.Domain.Interfaces;
+﻿using AutoBet.Domain.Entities;
+using AutoBet.Domain.Interfaces;
+using AutoMapper;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
 
 namespace AutoBet.Domain.ViewModels
@@ -6,9 +11,25 @@ namespace AutoBet.Domain.ViewModels
     public class CertificateViewModel : BaseViewModel
     {
         #region Properties
-        public ICommand ImportCertificateCMD { get; }
+        private readonly ICertificateService CertificateService;
+
         public ICommand GenerateCertificateCMD { get; }
         public ICommand SaveCertificateCMD { get; }
+
+        private bool isCertificateValid;
+        public bool IsCertificateValid
+        {
+            get
+            {
+                return this.isCertificateValid;
+            }
+
+            set
+            {
+                this.isCertificateValid = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string name;
         private string email;
@@ -17,7 +38,6 @@ namespace AutoBet.Domain.ViewModels
         private string country;
         private string state;
         private string city;
-        private bool isCertificateValid;
 
         public string Name
         {
@@ -111,28 +131,14 @@ namespace AutoBet.Domain.ViewModels
             }
         }
 
-        public bool IsCertificateValid
-        {
-            get
-            {
-                return this.isCertificateValid;
-            }
-
-            set
-            {
-                this.isCertificateValid = value;
-                OnPropertyChanged();
-            }
-        }
-
         #endregion Properties
+
         public CertificateViewModel() { }
-        public CertificateViewModel(ILanguageService lang)
+        public CertificateViewModel(ICertificateService certificateService, ILanguageService languageService, IMapper mapper)
         {
-            L = lang;
+            L = languageService; CertificateService = certificateService;
             GenerateCertificateCMD = new RelayCommand(GenerateCertificate);
             SaveCertificateCMD = new RelayCommand(SaveCertificate);
-            ImportCertificateCMD = new RelayCommand(ImportCertificate);
         }
 
         void GenerateCertificate(object  o)
@@ -143,8 +149,16 @@ namespace AutoBet.Domain.ViewModels
         {
 
         }
-        void ImportCertificate(object o)
+
+        public void ImportCertificate(string filepath)
         {
+            X509Certificate2  cert = CertificateService.GetCertificate(filepath);
+            CertificateInfo info = CertificateService.GetInfo(cert.Subject);
+            Name = info.CommonName;
+            Email = info.Email;
+            Organization = info.Organization;
+            OrganizationUnit = info.OrganizationalUnitName;
+            Country = info.Country;
             IsCertificateValid = !IsCertificateValid;
         }
 

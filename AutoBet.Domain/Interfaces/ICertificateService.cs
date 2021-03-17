@@ -8,5 +8,8 @@ namespace AutoBet.Domain.Interfaces
         public X509Certificate2 Create(CertificateInfo c);
         public void AddOrReplace(X509Certificate2 certificate);
         public X509Certificate2 GetBetfairCertificate();
+        public X509Certificate2 GetCertificate(string path);
+        public CertificateInfo GetInfo(string subject);
+
     }
 }

@@ -57,7 +57,7 @@
                                 </Label.Style>
                             </Label>
                         </WrapPanel>
-                        <Button  Content="{Binding L[Import],FallbackValue=Import}" Command="{Binding ImportCertificateCMD}" HorizontalAlignment="Right" Height="20" FontSize="10"   Padding="10 2 10 3"/>
+                        <Button  Content="{Binding L[Import],FallbackValue=Import}" Command="{Binding ImportCertificateCMD}" HorizontalAlignment="Left" Height="20" FontSize="10"   Padding="10 2 10 3" Margin="259,2,0,0" VerticalAlignment="Top" Click="ImportButtonClick"/>
                     </Grid>
                     <Separator Height="1" Background="#FFE0E0E0" Margin="0,6,0,5"/>
 

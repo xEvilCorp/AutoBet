@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoBet.Domain.ViewModels;
+using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AutoBet.App.Views
 {
@@ -23,6 +14,18 @@ namespace AutoBet.App.Views
         public CertificateView()
         {
             InitializeComponent();
+        }
+
+        private void ImportButtonClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Certificate file (*.pfx)|*.pfx";
+            bool? result = dialog.ShowDialog();
+            var vm = App.Container.GetService<CertificateViewModel>();
+            if (result.HasValue && result.Value)
+            {
+                vm.ImportCertificate(dialog.FileName);
+            }
         }
     }
 }
