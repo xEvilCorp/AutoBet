@@ -1,0 +1,27 @@
+{
+  "name": "auto-bet-app",
+  "version": "1.0.0",
+  "description": "An app that automates/helps with bets on betfair.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xEvilCorp/AutoBet.git"
+  },
+  "keywords": [],
+  "author": "EvilCorp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xEvilCorp/AutoBet/issues"
+  },
+  "homepage": "https://github.com/xEvilCorp/AutoBet#readme",
+  "devDependencies": {
+    "electron": "^12.0.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3"
+  }
+}
