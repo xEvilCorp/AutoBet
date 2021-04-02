@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="INVALID_USERNAME_OR_PASSWORD" xml:space="preserve">
+    <value>O nome de usuário ou a senha não são válidos</value>
+  </data>
+  <data name="ACCOUNT_NOW_LOCKED" xml:space="preserve">
+    <value>A conta foi bloqueada.</value>
+  </data>
+  <data name="ACCOUNT_ALREADY_LOCKED" xml:space="preserve">
+    <value>A conta já está bloqueada</value>
+  </data>
+  <data name="PENDING_AUTH" xml:space="preserve">
+    <value>Autenticação pendente</value>
+  </data>
+  <data name="TELBET_TERMS_CONDITIONS_NA" xml:space="preserve">
+    <value>Termos e condições do Telbet rejeitados</value>
+  </data>
+  <data name="DUPLICATE_CARDS" xml:space="preserve">
+    <value>Cartões duplicados</value>
+  </data>
+  <data name="SECURITY_QUESTION_WRONG_3X" xml:space="preserve">
+    <value>O usuário digitou incorretamente a resposta de segurança 3 vezes</value>
+  </data>
+  <data name="KYC_SUSPEND" xml:space="preserve">
+    <value>KYC suspenso</value>
+  </data>
+  <data name="SUSPENDED" xml:space="preserve">
+    <value>A conta foi suspensa</value>
+  </data>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>Usuário autenticado com sucesso.</value>
+  </data>
+  <data name="CLOSED" xml:space="preserve">
+    <value>Sua conta foi encerrada</value>
+  </data>
+  <data name="SELF_EXCLUDED" xml:space="preserve">
+    <value>A conta foi auto-excluída</value>
+  </data>
+  <data name="INVALID_CONNECTIVITY_TO_REGULATOR_DK" xml:space="preserve">
+    <value>O regulador da DK não pode ser acessado devido a alguns problemas internos no sistema de atrás ou de dentro do regulador; casos de tempo limite incluídos.</value>
+  </data>
+  <data name="NOT_AUTHORIZED_BY_REGULATOR_DK" xml:space="preserve">
+    <value>O usuário identificado pelas credenciais fornecidas não está autorizado nas jurisdições da DK devido às políticas dos reguladores. Ex: o usuário ao qual esta sessão deve ser criada não tem permissão para atuar (jogar, apostar) na jurisdição da DK.</value>
+  </data>
+  <data name="INVALID_CONNECTIVITY_TO_REGULATOR_IT" xml:space="preserve">
+    <value>O regulador da IT não pode ser acessado devido a alguns problemas internos no sistema de atrás ou de dentro do regulador; casos de tempo limite incluídos.</value>
+  </data>
+  <data name="NOT_AUTHORIZED_BY_REGULATOR_IT" xml:space="preserve">
+    <value>O usuário identificado pelas credenciais fornecidas não está autorizado nas jurisdições da IT devido às políticas dos reguladores. Ex: o usuário ao qual esta sessão deve ser criada não tem permissão para atuar (jogar, apostar) na jurisdição da IT.</value>
+  </data>
+  <data name="SECURITY_RESTRICTED_LOCATION" xml:space="preserve">
+    <value>A conta é restrita devido a preocupações de segurança</value>
+  </data>
+  <data name="BETTING_RESTRICTED_LOCATION" xml:space="preserve">
+    <value>A conta é acessada a partir de um local onde as apostas são restritas</value>
+  </data>
+  <data name="TRADING_MASTER" xml:space="preserve">
+    <value>Conta principal da negociação</value>
+  </data>
+  <data name="TRADING_MASTER_SUSPENDED" xml:space="preserve">
+    <value>Conta principal da negociação suspensa</value>
+  </data>
+  <data name="AGENT_CLIENT_MASTER" xml:space="preserve">
+    <value>Principal cliente do agente</value>
+  </data>
+  <data name="AGENT_CLIENT_MASTER_SUSPENDED" xml:space="preserve">
+    <value>Principal cliente do agente suspenso</value>
+  </data>
+  <data name="DANISH_AUTHORIZATION_REQUIRED" xml:space="preserve">
+    <value>Autorização da Dinamarca necessária</value>
+  </data>
+  <data name="SPAIN_MIGRATION_REQUIRED" xml:space="preserve">
+    <value>Migração da Espanha obrigatória</value>
+  </data>
+  <data name="DENMARK_MIGRATION_REQUIRED" xml:space="preserve">
+    <value>Migração da Dinamarca obrigatória</value>
+  </data>
+  <data name="SPANISH_TERMS_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>A versão mais recente dos termos e condições em espanhol deve ser aceita. Faça o log-in no site para aceitar as novas condições.</value>
+  </data>
+  <data name="ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>A última versão do contrato em italiano deve ser aceita. Faça o log-in no site para aceitar as novas condições.</value>
+  </data>
+  <data name="CERT_AUTH_REQUIRED" xml:space="preserve">
+    <value>Certificado obrigatório ou certificado presente, mas não pode autenticar com ele</value>
+  </data>
+  <data name="CHANGE_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Obrigatório alterar a senha</value>
+  </data>
+  <data name="PERSONAL_MESSAGE_REQUIRED" xml:space="preserve">
+    <value>Mensagem pessoal necessária para o usuário</value>
+  </data>
+  <data name="INTERNATIONAL_TERMS_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>Os termos e condições internacionais mais recentes devem ser aceitos antes de fazer o log-in.</value>
+  </data>
+  <data name="EMAIL_LOGIN_NOT_ALLOWED" xml:space="preserve">
+    <value>Esta conta não optou por fazer o log-in com o e-mail</value>
+  </data>
+  <data name="MULTIPLE_USERS_WITH_SAME_CREDENTIAL" xml:space="preserve">
+    <value>Há mais de uma conta com a mesma credencial</value>
+  </data>
+  <data name="ACCOUNT_PENDING_PASSWORD_CHANGE" xml:space="preserve">
+    <value>A senha da conta deve ser recuperada para ser reativada em https://identitysso.b etfair.com/view/recoverpassword</value>
+  </data>
+  <data name="TEMPORARY_BAN_TOO_MANY_REQUESTS" xml:space="preserve">
+    <value>O limite de solicitações de log-in bem sucedidas por minuto foi excedido. Novas tentativas de log-in serão bloqueadas por 20 minutos</value>
+  </data>
+  <data name="ITALIAN_PROFILING_ACCEPTANCE_REQUIRED" xml:space="preserve">
+    <value>Faça o log-in no site para aceitar as novas condições</value>
+  </data>
+  <data name="AUTHORIZED_ONLY_FOR_DOMAIN_RO" xml:space="preserve">
+    <value>Voce tentou logar no Betfair Romeno sem uma conta .ro</value>
+  </data>
+  <data name="AUTHORIZED_ONLY_FOR_DOMAIN_SE" xml:space="preserve">
+    <value>Voce tentou logar no Betfair Sueco sem uma conta .se.</value>
+  </data>
+  <data name="ACTIONS_REQUIRED" xml:space="preserve">
+    <value>Voce deve logar em https://www.betfair.com e preencher as informações pendentes.</value>
+  </data>
+  <data name="SWEDEN_BANK_ID_VERIFICATION_REQUIRED" xml:space="preserve">
+    <value>Voce deve providenciar sua identificação do banco suéco via Betfair.se para continuar.</value>
+  </data>
+  <data name="SWEDEN_NATIONAL_IDENTIFIER_REQUIRED" xml:space="preserve">
+    <value>Voce deve providenciar sua identificação nacional suéca via Betfair.se para continuar.</value>
+  </data>
+  <data name="NAME_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>O campo de nome não deve conter nenhum caractere especial.</value>
+  </data>
+  <data name="EMAIL_MUST_BE_VALID" xml:space="preserve">
+    <value>O e-mail deve ser válido.</value>
+  </data>
+  <data name="COUNTRY_CODE_CHAR_LENGTH" xml:space="preserve">
+    <value>O código do país deve ter 2 caracteres.</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>A senha deve ser fornecida.</value>
+  </data>
+  <data name="USERNAME_EMPTY" xml:space="preserve">
+    <value>O nome de usuário deve ser fornecido.</value>
+  </data>
+  <data name="NAME_FIELD_EMPTY" xml:space="preserve">
+    <value>O campo de nomes não deve estar vazio.</value>
+  </data>
+  <data name="ORGANIZATION_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>O campo de nome da organização não deve conter nenhum caractere especial.</value>
+  </data>
+  <data name="LOCALITY_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>O campo de localidade/cidade da organização não deve conter nenhum caractere especial.</value>
+  </data>
+  <data name="STATE_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>O campo de estado/província não deve conter nenhum caractere especial.</value>
+  </data>
+  <data name="ORGANIZATION_UNIT_FIELD_SPECIAL_CHAR" xml:space="preserve">
+    <value>O campo de nome da unidade organizacional não deve conter nenhum caractere especial.</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="REMEMBER_CREDENTIALS" xml:space="preserve">
+    <value>Lembrar credenciais</value>
+  </data>
+  <data name="SIGN_IN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="COUNTRY" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ORGANIZATION" xml:space="preserve">
+    <value>Organização</value>
+  </data>
+  <data name="ORGANIZATION_UNIT" xml:space="preserve">
+    <value>Unidade de organização</value>
+  </data>
+  <data name="GENERATE_CERTIFICATE" xml:space="preserve">
+    <value>Gerar Certificado</value>
+  </data>
+  <data name="CERTIFICATE" xml:space="preserve">
+    <value>Certificado</value>
+  </data>
+  <data name="STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="IMPORT" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="MISSING" xml:space="preserve">
+    <value>Faltando</value>
+  </data>
+</root>
